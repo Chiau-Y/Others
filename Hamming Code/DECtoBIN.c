@@ -4,16 +4,16 @@
 // the dec num, ptr to array, ptr to length
 void DectoBin (int dec, int *ptr_array, int *ptr_len)
 {
-  long int q = dec;
-  int remain;
-
-  while (q != 0)
-    {
-        remain = q % 2;
-        q = q / 2;
-        *ptr_array++ = remain; // 取值後，位置+1
-        (*ptr_len)++; // 取值後做+1
-    }
+    long int q = dec;
+    int remain;
+    
+    while (q != 0)
+        {
+            remain = q % 2;
+            q = q / 2;
+            *ptr_array++ = remain; // 取值後，位置+1
+            (*ptr_len)++; // 取值後做+1
+        }
 }
 
 
