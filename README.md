@@ -7,4 +7,5 @@
 ## 2. Hamming Code
 ### 十進制轉二進制
 Reference : https://reurl.cc/5o63zV
+
 ![image](https://user-images.githubusercontent.com/83625018/117947784-19163a80-b343-11eb-8f78-7f65a0d94a9c.png)
