@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // -------------------------- Dec to Bin ---------------------------- //
 // the dec num, ptr to array, ptr to length
@@ -31,11 +32,11 @@ int LenofParityBits(int len){
 void HammingCode(int* b_ptr, int* h_ptr, int h_len, int m_len){
     int xor_value = -1;//, initial = b_ptr;
 
-    h_ptr += h_len-1; // Start from H[11]
-    for (int i=12; i>1 ; i--){ 
+    h_ptr += 2; // Start from H[2]
+    for (int i=3; i<= h_len ; i++){ 
         // put the value into array except for parity bit
-        if (((i)&(i-1))){
-            if ((xor_value == -1)&&(*b_ptr == 1)){
+        if ((i)&(i-1)){
+            if (*b_ptr == 1){
                 // set the hamming code
                 *h_ptr = 1;
                 // xor the index
@@ -44,17 +45,17 @@ void HammingCode(int* b_ptr, int* h_ptr, int h_len, int m_len){
             } 
             b_ptr++;
         }
-        h_ptr--;
+        h_ptr++;
     }
-    
+
     // put parity bit into array 
+    h_ptr -= h_len;
     *h_ptr++ = xor_value&1;
-    for (int i=2; i<=h_len ; i++){ 
+    for (int i=2; i<=h_len; i++, h_ptr++){ 
         if (!((i)&(i-1))){
             xor_value = xor_value>>1;
             *h_ptr = xor_value&1; 
         }
-        h_ptr++;
     }   
 }
 
@@ -82,11 +83,12 @@ int main ()
     printf ("The Length of Parity Bit = %d bits\n", k);
     printf ("The Length of Transferred Data  = %d bits\n", k+length);
     
-    int Ham[12] = {0};   // Array for Hamming Code   
+    int Ham[k+length];   // Array for Hamming Code  
+    memset(Ham, 0, (k+length)*sizeof(int));  
     HammingCode(&bin[0], &Ham[0], k+length, length);    // Transferred Data, Hamming Code
     
     printf ("\nHamming Code : ");
-    for (int i=0; i<k+length ;i++){
+    for (int i=k+length-1; i>=0 ;i--){
         printf ("%d", Ham[i]);
     }  
     
