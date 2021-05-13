@@ -32,9 +32,8 @@ int LenofParityBits(int len){
 void HammingCode(int* b_ptr, int* h_ptr, int h_len, int m_len){
     int xor_value = -1;//, initial = b_ptr;
 
-    h_ptr += (h_len - 1); // Start from H[11]
-    // at least two parity bit for bit 1 and 2, so do until 3
-    for (int i=h_len; i>2 ; i--){ 
+    h_ptr += 2; // Start from H[2]
+    for (int i=3; i<= h_len ; i++){ 
         // put the value into array except for parity bit
         if ((i)&(i-1)){
             if (*b_ptr == 1){
@@ -46,11 +45,11 @@ void HammingCode(int* b_ptr, int* h_ptr, int h_len, int m_len){
             } 
             b_ptr++;
         }
-        h_ptr--;
+        h_ptr++;
     }
-    
+
     // put parity bit into array 
-    h_ptr -= 1;
+    h_ptr -= h_len;
     *h_ptr++ = xor_value&1;
     for (int i=2; (i<=h_len); i++, h_ptr++){
         if (!((i)&(i-1))){
@@ -89,7 +88,7 @@ int main ()
     HammingCode(&bin[0], &Ham[0], k+length, length);    // Transferred Data, Hamming Code
     
     printf ("\nHamming Code : ");
-    for (int i=0; i<k+length ;i++){
+    for (int i=k+length-1; i>=0 ;i--){
         printf ("%d", Ham[i]);
     }  
     
