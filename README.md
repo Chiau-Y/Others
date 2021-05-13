@@ -13,3 +13,6 @@ Reference : https://reurl.cc/5o63zV
 ![image](https://user-images.githubusercontent.com/83625018/118066710-c5066700-b3d1-11eb-8edd-da157f350513.png)
 #### 從LSB開始加密
 ![image](https://user-images.githubusercontent.com/83625018/118066814-f5e69c00-b3d1-11eb-921e-b6e62ba389e8.png)
+
+## 3.影片擷取
+![image](https://user-images.githubusercontent.com/83625018/118099484-e1bd9180-b407-11eb-9731-0f6c5277b0c8.png)
