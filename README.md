@@ -16,3 +16,6 @@ Reference : https://reurl.cc/5o63zV
 
 ## 3.影片擷取
 ![image](https://user-images.githubusercontent.com/83625018/118099484-e1bd9180-b407-11eb-9731-0f6c5277b0c8.png)
+
+## 4.Mutex練習
+![image](https://user-images.githubusercontent.com/83625018/118428901-0d3fc500-b703-11eb-9f27-bc0c7a4e3c57.png)
