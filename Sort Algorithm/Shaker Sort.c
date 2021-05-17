@@ -2,7 +2,7 @@
 
 #define Swap(A,B) {int temp = A; A = B; B = temp;}
 
-void ShakerSort(int *ptr, int len, int gap){
+void ShakerSort(int *ptr, int len){
     
     int right=0, left=len-1;   
     while(right<left){
@@ -27,13 +27,12 @@ void ShakerSort(int *ptr, int len, int gap){
 int main()
 {
     int A[10] = {2,5,85,65,74,7,23,15,1,10};    // Original array
-    int Gap = 4;
     
     printf("The Array : "); // Print array
     for(int i=0; i<sizeof(A)/sizeof(A[0]); i++) printf("%d ",A[i]);
     
     printf("\n\n------- ShakeSort -------"); 
-    ShakerSort(&A[0], (sizeof(A)/sizeof(A[0])), Gap);
+    ShakerSort(&A[0], (sizeof(A)/sizeof(A[0])));
     
     printf("\n\nThe Array After Shaker Sort : "); // Print array
     for(int i=0; i<sizeof(A)/sizeof(A[0]); i++) printf("%d ",A[i]);
