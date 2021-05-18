@@ -28,6 +28,8 @@ Reference : https://reurl.cc/5o63zV
 #### Insertion Sort
 ![image](https://user-images.githubusercontent.com/83625018/118587594-7ee54500-b7cf-11eb-9304-0cf9ae99cedb.png)
 #### Shell Sort
+![image](https://user-images.githubusercontent.com/83625018/118587729-acca8980-b7cf-11eb-9360-f3990b74ce1e.png)
 #### Shaker Sort
+![image](https://user-images.githubusercontent.com/83625018/118587773-c075f000-b7cf-11eb-91c1-8334b2eb5db9.png)
 #### Quick Sort
 ![image](https://user-images.githubusercontent.com/83625018/118587109-940da400-b7ce-11eb-8198-6da91a366035.png)
