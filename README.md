@@ -21,3 +21,13 @@ Reference : https://reurl.cc/5o63zV
 ![image](https://user-images.githubusercontent.com/83625018/118428901-0d3fc500-b703-11eb-9f27-bc0c7a4e3c57.png)
 
 ## 5. Sort Algorithm
+# Bubble Sort
+![image](https://user-images.githubusercontent.com/83625018/118587147-a687dd80-b7ce-11eb-803a-22c58bedf644.png)
+# Selection Sort
+![image](https://user-images.githubusercontent.com/83625018/118587372-17c79080-b7cf-11eb-92ea-2c6dcbaf2b0a.png)
+# Insertion Sort
+![image](https://user-images.githubusercontent.com/83625018/118587594-7ee54500-b7cf-11eb-9304-0cf9ae99cedb.png)
+# Shell Sort
+# Shaker Sort
+# Quick Sort
+![image](https://user-images.githubusercontent.com/83625018/118587109-940da400-b7ce-11eb-8198-6da91a366035.png)
