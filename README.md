@@ -19,3 +19,5 @@ Reference : https://reurl.cc/5o63zV
 
 ## 4.Mutex練習
 ![image](https://user-images.githubusercontent.com/83625018/118428901-0d3fc500-b703-11eb-9f27-bc0c7a4e3c57.png)
+
+## 5.Sort Algorithm
