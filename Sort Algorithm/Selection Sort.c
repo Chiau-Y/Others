@@ -11,6 +11,9 @@ void SelectionSort(int *ptr, int len){
             if (ptr[j] < ptr[index_min]) index_min = j ;   // Find the least number
         }
         if (i != index_min) Swap(ptr[i],ptr[index_min]);
+        
+        printf("\nMinimum : %2d ==> ",ptr[i]); // Print array
+        for(int z=0; z<len; z++) printf("%d ",ptr[z]); 
     }
 }
 
@@ -21,6 +24,7 @@ int main()
     printf("The Array : "); // Print array
     for(int i=0; i<sizeof(A)/sizeof(A[0]); i++) printf("%d ",A[i]);
     
+    printf("\n\n------- Selection Sort -------"); 
     SelectionSort(&A[0], (sizeof(A)/sizeof(A[0])));
     
     printf("\n\nThe Array After Selection Sort : "); // Print array

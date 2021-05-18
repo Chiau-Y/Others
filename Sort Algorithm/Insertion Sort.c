@@ -9,6 +9,8 @@ void InsertionSort(int *ptr, int len){
             ptr[j] = ptr[j-1];
             ptr[j-1] =  temp;
         }
+        printf("\nValue : %2d ==> ",temp); // Print array
+        for(int z=0; z<len; z++) printf("%d ",ptr[z]); 
     }
 }
 
@@ -19,6 +21,7 @@ int main()
     printf("The Array : "); // Print array
     for(int i=0; i<sizeof(A)/sizeof(A[0]); i++) printf("%d ",A[i]);
     
+    printf("\n\n------- Insertion Sort -------"); 
     InsertionSort(&A[0], (sizeof(A)/sizeof(A[0])));
     
     printf("\n\nThe Array After Insertion Sort : "); // Print array
