@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int BitNum = 16;    // global variable
+
+int HighestBit(int x){
+    
+    if (x == 0) return -1;
+    
+    int bit = BitNum; // answer
+    int shiftbit = BitNum/2; // the step to shift right
+    int half = shiftbit;    // Binary
+    
+    while(half != 0){
+        if ((x >> shiftbit) == 0) {
+            bit = bit - half;
+            x = x << half;
+        }
+        half /= 2;
+        shiftbit += half;        
+    }
+
+    return bit;
+}
+
+int LowestBit(int x){
+    
+    if (x == 0) return -1;
+    
+    int bit = BitNum; // answer
+    int shiftbit = BitNum/2; // the step to shift left
+    int half = shiftbit;    // Binary
+    
+    while(half != 0){
+        if ((x << shiftbit) == 0) {
+            bit = bit - half;
+            x = x >> half;
+        }
+        half /= 2;
+        shiftbit += half;        
+    }
+
+    return bit;
+}
+
+
+// Assume there is a 16-bits number
+int main()
+{
+    int num = 654;  // 654, 0000 0010 1000 1110
+    
+    int ansH = HighestBit(num);
+    int ansL = LowestBit(num);
+    
+    if (ansH == -1) printf("No Found !");
+    else printf("The highest bit at bit %d \n", ansH);
+
+    if (ansL == -1) printf("No Found !");
+    else printf("The lowest bit at bit %d \n", BitNum - ansL);
+
+    return 0;
+}
