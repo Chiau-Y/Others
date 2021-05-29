@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int BitNum = 16;    // global variable
+int BitNum = 32;    // global variable
 
-int HighestBit(int x){
+int HighestBit(unsigned int x){
     
     if (x == 0) return -1;
     
@@ -12,7 +12,7 @@ int HighestBit(int x){
     
     while(half != 0){
         if ((x >> shiftbit) == 0) {
-            bit = bit - half;
+            bit -= half;
             x = x << half;
         }
         half /= 2;
@@ -22,40 +22,46 @@ int HighestBit(int x){
     return bit;
 }
 
-int LowestBit(int x){
+int LowestBit(unsigned int x){
     
     if (x == 0) return -1;
     
-    int bit = BitNum; // answer
+    int bit = 0; // answer
     int shiftbit = BitNum/2; // the step to shift left
     int half = shiftbit;    // Binary
     
     while(half != 0){
         if ((x << shiftbit) == 0) {
-            bit = bit - half;
+            bit += half;
             x = x >> half;
         }
         half /= 2;
-        shiftbit += half;        
+        shiftbit += half; 
     }
 
     return bit;
 }
 
 
-// Assume there is a 16-bits number
+// Assume there is a 32-bits number
 int main()
 {
-    int num = 654;  // 654, 0000 0010 1000 1110
+    unsigned int num = 652;  // 0010 1000 1100
     
     int ansH = HighestBit(num);
-    int ansL = LowestBit(num);
+    int ansL = LowestBit(num);  // first method, not good
+    
+    unsigned int num_two = -num; // Second method, 2's compliment, good
+    int ansL_two = HighestBit(num_two);
     
     if (ansH == -1) printf("No Found !");
     else printf("The highest bit at bit %d \n", ansH);
 
     if (ansL == -1) printf("No Found !");
-    else printf("The lowest bit at bit %d \n", BitNum - ansL);
-
+    else printf("The lowest bit at bit %d \n", ansL);
+    
+    if (ansL_two == -1) printf("No Found !");
+    else printf("The lowest bit at bit %d by 2's compliment\n", ansL);
+    
     return 0;
 }
