@@ -13,6 +13,7 @@ void HighestOrderBit2(unsigned int n){
     
     unsigned int nn = n;
     
+    // let the bits which is lower than highest bit are all 1
     n |= (n >>  1);
     n |= (n >>  2);
     n |= (n >>  4);
