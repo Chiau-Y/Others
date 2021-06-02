@@ -7,7 +7,9 @@ unsigned int ABS(int x){
     // signed int shift will be filled in 0
     
     return (x ^ (x >> 31)) + ((x >> 31)&1);
-    // return (x + (x >> 31)) ^ (x >> 31);   // another method
+    
+    // another method, toggle the number & plus 1
+    // return (x + (x >> 31)) ^ (x >> 31);   
     
 }
 
