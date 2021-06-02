@@ -51,7 +51,7 @@ int main()
     int ansH = HighestBit(num);
     int ansL = LowestBit(num);  // first method, not good
     
-    unsigned int num_two = -num; // Second method, 2's compliment, good
+    unsigned int num_two = -num & num; // Second method, 2's compliment, good
     int ansL_two = HighestBit(num_two);
     
     if (ansH == -1) printf("No Found !");
