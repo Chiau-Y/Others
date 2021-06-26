@@ -3,8 +3,8 @@
 
 unsigned int ABS(int x){
 
-    // unsigned int shift will be filled in -1
-    // signed int shift will be filled in 0
+    // unsigned int shift will be filled in 0
+    // signed int shift will be filled in 0/1, depends on the highest bit
     
     return (x ^ (x >> 31)) + ((x >> 31)&1);
     
