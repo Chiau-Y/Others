@@ -4,8 +4,8 @@
 using namespace std;
 
 class AbstractEmployee{
-    // void AskForPromotion(); // virtul function, can be or can not be overwritten
-    virtual void AskForPromotion() = 0; // pure virtul function, must be overwritten
+    // void AskForPromotion(); // virtual function, can be or can not be overwritten
+    virtual void AskForPromotion() = 0; // pure virtual function, must be overwritten
 };
 
 class Employee:AbstractEmployee{
@@ -37,7 +37,7 @@ public:
         Job = job;
     }
     
-    void AskForPromotion(){ // pure virtul function, must be overwritten
+    void AskForPromotion(){ // pure virtual function, must be overwritten
         if (Age >= 30)
             cout << Name << " got promoted !" << endl;
         else
@@ -60,7 +60,7 @@ int main()
     Employee employee2 = Employee("Henry", 32, "Teacher");
     employee2.IntroduceYourself();
     
-    // pur virtual function
+    // pure virtual function
     employee1.AskForPromotion();
     employee2.AskForPromotion();
     
