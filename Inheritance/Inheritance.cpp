@@ -46,6 +46,13 @@ public:
             cout << Name << ", sorry, no promotion for you." << endl;
     };
     
+    // polymorphism, virtual function
+    // it will check is there any Work() in the child class
+    // if yes, access that function
+    virtual void Work(){    
+        cout << Name << " is checking email..." << endl;
+    }
+    
 };  // Don't forget semicolon !!!
 
 class Developer:public Employee{
@@ -62,6 +69,10 @@ public:
         // cout << GetName() << " fix bug using " << ProgrammingLanguage << endl;   // when Name is in private
         cout << Name << " fix bug using " << ProgrammingLanguage << endl;   // only when Name move to """protected"""
     }
+    
+    void Work(){    
+        cout << Name << " is writing " << ProgrammingLanguage << "..." << endl;
+    }
 };
 
 int main()
@@ -73,6 +84,13 @@ int main()
     developer1.FixBug();
     developer1.IntroduceYourself(); // need to be Developer:"""public""" Employee so that can access the function
     developer1.AskForPromotion();
+    
+    developer1.Work();  // no matter the function is virtual or not, it will be executed as we expected
+    
+    // The most common use of polymorphism is when a parent class reference is unsigned
+    // to refer to a child class object
+    Employee *e = &developer1;
+    e -> Work();
     
     return 0;
 }
